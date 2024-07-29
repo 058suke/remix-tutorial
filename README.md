@@ -1,6 +1,7 @@
-# Welcome to Remix!
+# Remix Tutorial
 
-- [Remix Docs](https://remix.run/docs)
+[Remix Docs](https://remix.run/docs)の[チュートリアル](https://remix.run/docs/en/main/start/tutorial)をやってみた。
+
 
 ## Development
 
