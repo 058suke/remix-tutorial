@@ -3,37 +3,28 @@
 [Remix Docs](https://remix.run/docs)の[チュートリアル](https://remix.run/docs/en/main/start/tutorial)をやってみた。
 
 
-## Development
+# チュートリアル メモ
 
-From your terminal:
+## 開発サーバーを立ち上げる
 
 ```sh
 npm run dev
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
+* `development`モードでアプリケーションを立ち上げる（ホットリロード対応）
+* [http://localhost:5173](http://localhost:5173)にブラウザでアクセスできる。
 
-## Deployment
 
-First, build your app for production:
+## スタイルシートの読み込み
 
-```sh
-npm run build
+```typescript
+import type { LinksFunction } from "@remix-run/node";
+
+import appStyleHref from "./app.css?url";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: appStyleHref },
+];
 ```
 
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/server`
-- `build/client`
+* `LinksFunction`を用いると`<link>`Elementを追加できる。
